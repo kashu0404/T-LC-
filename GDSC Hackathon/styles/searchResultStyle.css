@@ -1,0 +1,124 @@
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    background-color: rgb(245, 245, 245);
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-top: 7%;
+    padding: 3em 0;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding-left: 2em;
+}
+
+h4 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.price-container, .reviews-container, .sizes-container, .products-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7em;
+}
+
+.filters {
+    display: flex;
+    gap:2em;
+    align-items:center ;
+}
+
+.title{
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.ranges {
+   display: none;
+
+}
+
+
+.ranges-selected {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+}
+
+.button-range {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+.button-range button {
+    width: 1em;
+    height: 1em;
+    border-radius: 0;
+    border: 1px solid black;
+}
+
+
+.favourites-container {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 3em;
+    columns: 1fr 1fr 1fr;
+    margin-bottom: 5em;
+    padding: 3em;
+    flex-wrap: wrap;
+}
+
+
+a:link { 
+    text-decoration: none; 
+    color: black;
+  } 
+  a:visited { 
+    text-decoration: none; 
+    color: black;
+  } 
+  a:hover { 
+    text-decoration: none; 
+    color: black;
+  } 
+  a:active { 
+    text-decoration: none; 
+    color: black;
+  }
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.item img {
+   width: 90%;
+}
+
+.name-rate {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.name-rate p {
+    white-space: nowrap;
+}
+.rate {
+    font-size: 1.5rem;
+}
+
