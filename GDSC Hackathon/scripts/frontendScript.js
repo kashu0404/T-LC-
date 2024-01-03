@@ -63,10 +63,10 @@ function changeMainImage(src) {
 
 
 
-
 function displaySelection(button) {
-   
+
     let filterContainer = button.closest('.filter-container');
+
 
     let allRanges = filterContainer.querySelectorAll('.ranges');
     allRanges.forEach(function (range) {
