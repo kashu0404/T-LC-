@@ -1,0 +1,58 @@
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    background-color: rgb(245, 245, 245);
+}
+
+h1 {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.favourites-container {
+    display: flex;
+    justify-content: space-evenly;
+    columns: 1fr 1fr 1fr;
+    margin-bottom: 5em;
+    padding: 3em;
+
+    height: 40em;
+    flex-wrap: wrap;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+}
+.item img {
+   width: 90%;
+}
+
+.name-rate {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.name-rate p {
+    white-space: nowrap;
+}
+.rate {
+    font-size: 1.5rem;
+}
+
+.save-button {
+    width: 3em;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.save-button img {
+    filter: invert(35%) sepia(100%) saturate(3462%) hue-rotate(346deg) brightness(80%) contrast(97%);
+}
+
+hr {
+    width: 70%;
+    border: 1px solid black;
+}

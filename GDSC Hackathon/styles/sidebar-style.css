@@ -1,0 +1,68 @@
+
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 600;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 0.1em;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap:0.6em;
+    width: 15%;
+    position: fixed;
+    z-index: 2;
+    top: 20%;
+    left: 0%;
+    background-color: rgb(202,214,202);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    border-radius: 0 3em 3em 0 ;
+    box-shadow: 10px 10px 15px rgb(224, 224, 224);
+}
+  
+.sidebar a {
+    padding-left: 1.3em;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 1rem;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar-div {
+    padding: 1em 1.6em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidebar-div img {
+    width:18%;
+    height:auto;
+    cursor: pointer;
+}
+
+.sidebar hr {
+    border: 1px solid white;
+    width: 80%;
+}
+
+.sidebar-div a:hover {
+    color: white;
+}
+
+.closebtn {
+    position: absolute;
+    top: 1.3em;
+    right: 2em;
+    font-size: 1.5rem;
+}
