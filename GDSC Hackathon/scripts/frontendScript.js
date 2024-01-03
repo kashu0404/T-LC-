@@ -46,58 +46,44 @@ function changeMainImage(src) {
     mainImg.src = src;
 
     document.querySelector('.img-1').classList.remove('selected-img');
-    
+
+    document.querySelectorAll('.other-img img').forEach(function (img) {
+        if (img.src !== src) {
+            img.classList.remove('selected-img');
+        }
+    });
+
     let selectedSmallImg = document.querySelector(`.other-img img[src="${src}"]`);
-    
+
     if (selectedSmallImg) {
         selectedSmallImg.classList.add('selected-img');
         localStorage.setItem('smallImg', JSON.stringify(selectedSmallImg));
     }
 }
-// function displaySelection() {
-//     let titleElements = document.querySelectorAll('.title');
 
-//     titleElements.forEach(titleElement => {
-//         let rangeElements = document.querySelectorAll('.ranges');
 
-//         titleElement.addEventListener('click', function () {
-//             rangeElements.forEach(rangeElement => {
-//                 // Toggle the 'ranges-selected' class
-//                 rangeElement.classList.toggle('ranges-selected');
-
-//                 // Toggle the 'display' property based on the presence of 'ranges-selected' class
-//                 if (rangeElement.classList.contains('ranges-selected')) {
-//                     rangeElement.style.display = 'flex';
-//                 } else {
-//                     rangeElement.style.display = 'none';
-//                 }
-//             });
-//         });
-//     });
-// }
 
 
 function displaySelection(button) {
-    // Get the parent filter container
+   
     let filterContainer = button.closest('.filter-container');
 
-    // Hide all ranges in the parent container first
     let allRanges = filterContainer.querySelectorAll('.ranges');
     allRanges.forEach(function (range) {
         range.style.display = 'none';
-        range.classList.remove('ranges-selected'); // Remove the class from all ranges
+        range.classList.remove('ranges-selected');
     });
 
-    // Show the specific ranges associated with the clicked button
+   
     let ranges = button.parentElement.nextElementSibling;
 
-    // Toggle the display property of the ranges
+  
     if (ranges.style.display === 'none') {
         ranges.style.display = 'flex';
-        ranges.classList.add('ranges-selected'); // Add the class to the specific ranges
+        ranges.classList.add('ranges-selected'); 
     } else {
         ranges.style.display = 'none';
-        ranges.classList.remove('ranges-selected'); // Remove the class if hiding the ranges
+        ranges.classList.remove('ranges-selected'); 
     }
 }
 
