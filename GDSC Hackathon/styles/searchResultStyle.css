@@ -1,14 +1,17 @@
 body {
     font-family: 'Libre Franklin', sans-serif;
     background-color: rgb(245, 245, 245);
-    font-weight: 500;
 }
 
-.container {
+.container{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    padding: 0 1em;
+    gap: 3em;
+}
+h3 {
     margin-top: 7%;
-    padding: 3em 0;
+    text-align: center;
 }
 
 .filter-container {
@@ -28,6 +31,7 @@ h4 {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.7em;
+    font-weight: 500;
 }
 
 .filters {
@@ -71,7 +75,7 @@ h4 {
 }
 
 
-.favourites-container {
+.list-container {
     display: flex;
     justify-content: space-evenly;
     column-gap: 3em;
@@ -122,3 +126,7 @@ a:link {
     font-size: 1.5rem;
 }
 
+.vertical-line {
+    height: 600px;
+    border-left: 1px solid rgb(177,200,179);
+}
