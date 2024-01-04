@@ -56,3 +56,25 @@ hr {
     width: 70%;
     border: 1px solid black;
 }
+
+
+
+.favourites-container a:link { 
+    text-decoration: none; 
+    color: black;
+} 
+
+.favourites-container a:visited { 
+    text-decoration: none; 
+    color: black;
+} 
+
+.favourites-container  a:hover { 
+    text-decoration: none; 
+    color: black;
+} 
+
+.favourites-container  a:active { 
+    text-decoration: none; 
+    color: black;
+}
