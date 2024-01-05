@@ -8,9 +8,10 @@ body {
     align-items: flex-start;
     padding: 0 1em;
     gap: 3em;
+   
 }
-h3 {
-    margin-top: 7%;
+h2 {
+    margin-top: 10%;
     text-align: center;
 }
 
