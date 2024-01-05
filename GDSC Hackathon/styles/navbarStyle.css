@@ -11,6 +11,7 @@ nav {
     background-color: rgb(245, 245, 245);
 }
 
+
 .left-section {
     padding-left:  0.9em;
     margin-top: 2em;
@@ -20,10 +21,17 @@ nav {
 }
 
 .left-section img {
-    width: 13%;
-    padding-right: 0.5em;
-    padding-bottom: 0.6em;
+    width: 4.5em;
+   margin-right: 1em;
 }
+
+.left-section a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
 
 .middle-section, .right-section {
     flex: 1;
