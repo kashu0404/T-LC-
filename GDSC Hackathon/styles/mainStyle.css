@@ -112,6 +112,21 @@ hr {
     width: 50%;
   }
 
+
+  @media screen and (min-width:769px) and (max-width:1019px) {
+    .text-section-info h1 {
+        padding-top: 3em;
+        margin-top: 0;
+    }
+  }
+
+
+
+
+
+
+
+
   @media (min-width: 375px) and (max-width: 768px) {
 
     nav {
