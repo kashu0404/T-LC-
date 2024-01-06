@@ -32,14 +32,13 @@ body {
 }
 
 .image-section img {
+    display: block;
     padding-top: 5em;
     height: 500px;
 }
 
 .responsive-img {
     display: none;
-    background-image: url('images/sustaintable_clothing.jpg');
-    background-size: cover;
     height: 500px;
 }
 
@@ -187,9 +186,7 @@ hr {
 
     .responsive-img {
         display: block;
-        background-image: url('images/sustaintable_clothing.jpg');
-        background-size: cover;
-        height: 500px;
+        height: 400px;
     }
 
     .image-section {
