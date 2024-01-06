@@ -124,3 +124,85 @@ body {
 .rating1 ul, .rating2 ul, .rating3 ul {
     color: white;
 }
+
+
+@media (min-width:470px) and (max-width: 768px) {
+    .goals-1 {
+        width: 70%;
+    }
+
+    .goals-1 h2, .goals-2 h2 {
+        font-size: 1.65rem;
+    }
+
+    .goals-2 h2 {
+        padding-left: 60%;
+    }
+}
+
+@media only screen and (min-width:400px) and (max-width:476px)  {
+
+.goals-1 {
+    width: 100%;
+}
+
+
+.goals-1 h2, .goals-2 h2 {
+
+    font-size: 1.9rem;
+    margin-bottom: 0;
+
+    overflow:visible;
+
+}
+
+.goals-2 h2 {
+    padding-left: 60%;
+}
+}
+
+@media screen and (min-width: 320px) and (max-width: 399px) {
+    .goals-container {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .goals-1 {
+        width: 50%;
+    }
+
+    .goals-1 h2,
+    .goals-2 h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        padding-left: 0;
+        overflow: visible;
+        animation: typing 5s steps(17), cursor 1s step-end infinite alternate;
+    }
+
+    @keyframes cursor {
+        50% {
+            border: transparent;
+        }
+        100% {
+            border: transparent;
+        }
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+    }
+
+    .details-container {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .rating-container {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
