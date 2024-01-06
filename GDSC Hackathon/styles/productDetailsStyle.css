@@ -126,3 +126,73 @@ hr {
 .save-button img{
     width: 100%;
 }
+
+@media screen and (min-width:769px) and (max-width:1019px) {
+    .item-price {
+        margin-right: 1em;
+    }
+
+    .images-container {
+        width: 70%;
+    }
+}
+
+@media (min-width: 477px) and (max-width: 768px) { 
+    .container {
+        flex-direction: column;
+    }
+
+    .images-container {
+        width: 70%;
+    }
+
+    .other-img {
+        margin-bottom: 2em;
+    }
+
+    .info-container {
+        margin-left: 2em;
+        margin-right: 1em;
+    }
+}
+
+@media only screen and (min-width:340px) and (max-width:476px) {
+    .container {
+        margin-top: 30%;
+        flex-direction: column;
+    }
+
+    .images-container {
+        width: 100%;
+    }
+
+    .main-img{
+        width: 500px;
+    }
+
+    .other-img {
+        margin-bottom: 2em;
+    }
+
+    .info-container {
+        margin-left: 2em;
+        margin-right: 1em;
+    }
+
+    .item-name {
+        font-size: 1.2rem;
+    }
+
+    .fabric, .quality {
+        font-size: 1rem;
+    }
+
+    .rate-types {
+        font-size: 1.2rem;
+    }
+
+    .stars img {
+        margin-left: 0;
+        width: 160px;
+    }
+}
