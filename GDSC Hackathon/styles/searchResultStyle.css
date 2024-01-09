@@ -8,8 +8,8 @@ body {
     align-items: flex-start;
     padding: 0 1em;
     gap: 3em;
-   
 }
+
 h2 {
     margin-top: 10%;
     text-align: center;
@@ -130,4 +130,37 @@ a:link {
 .vertical-line {
     height: 600px;
     border-left: 1px solid rgb(177,200,179);
+}
+
+
+@media (min-width:676px) and (max-width: 1107px) {
+    #main h2 {
+        margin-top: 15%;
+    }
+}
+
+@media (min-width:560px) and (max-width:680px) {
+    #main h2 {
+        margin-top: 25%;
+    }
+
+    .container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width:450px) and (max-width:559px) {
+    #main h2 {
+        margin-top: 30%;
+       
+    }
+
+
+}
+
+@media (max-width:449px) {
+    #main h2 {
+        margin-top: 50%;
+       
+    }
 }
