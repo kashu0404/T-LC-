@@ -7,6 +7,7 @@ nav {
     right: 0;
     width: 100%;
     background-color: rgb(245, 245, 245);
+    flex-wrap: nowrap;
 }
 
 
@@ -27,7 +28,7 @@ nav {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: blacks;
+    color: black;
 }
 
 
@@ -118,13 +119,136 @@ nav {
     }
 }
 
-@media (min-width:710px) and (max-width:830px) {
+@media (min-width:555px) and (max-width:830px) {
 
 
     .icons {
-        width: 20px;
-        height: 20px;
+        width: 23px;
+        height: 23px;
+    }
+
+    .left-section a {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .middle-section {
+        margin-left: 1.5em;
+        margin-right: 0;
+        padding-bottom: 1em;
+    }
+    .middle-section p {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .right-section {
+        margin-right: 0;
+        padding-right: 0;
+        gap: 1em;
+    }
+
+    .links {
+        padding-left: 0.5em;
+    }
+      
+    .links li {
+        margin-left: 0;
     }
     
 }
 
+@media (min-width:456px) and (max-width: 554px) {
+    .heart-icon, .home-icon, .profile-icon {
+        display: none;
+    }
+
+    .links {
+        padding-left: 0.5em;
+    }
+      
+    .links li {
+        margin-left: 0;
+    }
+
+    .right-section {
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        gap: 0;
+        flex: 0;
+    }
+
+    .hamburger-icon {
+        width: 20px;
+    }
+
+    .left-section {
+        padding-left: 1em;
+        flex: 0;
+        margin-right: 1em;
+        white-space: nowrap;
+    }
+
+    .left-section img {
+        width: 3em;
+    }
+    
+    nav {
+        flex-wrap: nowrap;
+    }
+
+}
+
+@media (max-width:455px) {
+    .heart-icon, .home-icon, .profile-icon {
+        display: none;
+    }
+
+    .links {
+        padding-left: 0.5em;
+    }
+      
+    .links li {
+        margin-left: 0;
+    }
+
+    .right-section {
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        gap: 0;
+        flex: 0;
+    }
+
+    .left-section {
+        padding-left: 1em;
+        flex: 1;
+        margin-right: 1em;
+        white-space: nowrap;
+    }
+
+    .left-section img {
+        width: 3em;
+        margin-right: 0.3em;
+    }
+
+    .left-section a {
+        font-size: 0.9rem;
+    }
+
+    .middle-section {
+        margin-left: 0;
+        margin-right: 0;
+        flex:1;
+    }
+
+    .middle-section p {
+        white-space: nowrap;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+}
