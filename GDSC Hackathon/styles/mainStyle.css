@@ -35,11 +35,13 @@ body {
     display: block;
     padding-top: 5em;
     height: 500px;
+   
 }
 
 .responsive-img, .responsive-img-2  {
     display: none;
-    height: 500px;
+    height: 300px;
+    margin-bottom: 5em;
 }
 
 
@@ -194,6 +196,13 @@ hr {
       display: none;
     }
 
+    .image-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2em;
+    }
+
     .responsive-img-2 {
         display: block;
         object-fit: contain;
@@ -205,18 +214,16 @@ hr {
     .responsive-img {
         display: block;
         object-fit: contain;
-        /* height: 400px; */
-        width: 75%;
-        text-align: center;
+        width: 30em;
         margin: 0 0;
     }
 
     .responsive-img img {
         padding-top: 0;
         display: block;
-        width: 500px;
-        height: 300px;
-        
+        object-fit: cover;
+        /* width: 500px;
+        height: 300px; */
     }
 
     .responsive-img-2 img {
@@ -238,6 +245,7 @@ hr {
     .info-why {
       flex-direction: column;
       height: auto;
+      padding-bottom: 0;
     }
 
     .text-section-info h1 {
