@@ -200,10 +200,10 @@ hr {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 2em;
+        margin-bottom: 0;
     }
 
-    .responsive-img-2 {
+    .responsive-img-2  {
         display: block;
         object-fit: contain;
         height: 400px;
@@ -214,16 +214,19 @@ hr {
     .responsive-img {
         display: block;
         object-fit: contain;
-        width: 30em;
+      
         margin: 0 0;
-    }
+    } 
 
     .responsive-img img {
-        padding-top: 0;
-        display: block;
-        object-fit: cover;
-        /* width: 500px;
-        height: 300px; */
+           
+            padding-top: 0;
+          
+            display: block;
+            width: 400px;
+           height: 300px;
+       
+
     }
 
     .responsive-img-2 img {
@@ -231,8 +234,8 @@ hr {
         margin-top: 3em;
         margin-bottom: 0;
         display: block;
-        width: 240px;
-       height: 240px;
+        width: 350px;
+       height: 300px;
        margin-left: 3em;
        margin-right: 3em;
     }
