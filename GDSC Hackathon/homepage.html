@@ -151,41 +151,7 @@
 </head>
 
 <body>
-  <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
-    <div class="sidebar-div">
-      <img src="images/about-us-icon.png" alt="">
-      <a href="main.html">About Us</a>
-    </div>
 
-    <div class="sidebar-div">
-      <img src="images/rating-system-icon.png" alt="">
-      <a href="#details">Rating System</a>
-    </div>
-
-    <div class="sidebar-div">
-      <img src="images/heart-icon.png" alt="">
-      <a href="#">Favourites</a>
-    </div>
-
-    <div class="sidebar-div">
-      <img src="images/faq-icon.png" alt="">
-      <a href="#">FAQ</a>
-    </div>
-
-    <div class="sidebar-div">
-      <img src="images/contact-icon.png" alt="">
-      <a href="#">Contact Us</a>
-    </div>
-
-
-    <hr>
-    <div class="sidebar-div">
-      <img src="images/profile-icon.png" alt="">
-      <a href="#">Account</a>
-    </div>
-
-  </div>
 
   <div class="split-container">
     <!-- Content for the left side -->
@@ -213,7 +179,6 @@
             <div class="right-section">
                 <ul class="links">
                     <li><button class="icon-button"><a href="main.html"><img class="icons" src="images/home-icon.png" alt="home-icon"></a></button></li>
-                    <li><button class="icon-button"><a href="#" id="hamburger-icon"><img class="icons" src="images/hamburger.webp" alt="hamburger-icon"></a></button></li>
                     <li><button class="icon-button"><a href="accountDetails.html"><img class="icons" src="images/profile-icon.png" alt="profile-icon"></a></button></li>
                 </ul>
            </div>
@@ -228,34 +193,8 @@
     </div>
   </div>
 
-  <script>
-    let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
-    let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
-
-    let MsgHead = document.getElementById('msg');
-    let GreetHead = document.getElementById('greet');
-    let SignoutBtn = document.getElementById('signoutbutton');
-
-    let Signout = () => {
-      sessionStorage.removeItem("user-creds");
-      sessionStorage.removeItem("user-info");
-      window.location.href = 'signIn.html'
-    }
-
-    let CheckCred = () => {
-      if (!sessionStorage.getItem("user-creds"))
-        window.location.href = 'signIn.html'
-      else {
-        //MsgHead.innerText = `user with email "${UserCreds.email}" logged in`;
-        GreetHead.innerText = `Welcome ${UserInfo.firstname + " " + UserInfo.lastname}!`;
-      }
-
-    }
-
-    window.addEventListener('load', CheckCred);
-    SignoutBtn.addEventListener('click', Signout);
-  </script>
    <script src="scripts/frontendScript.js"></script>
+   <script src="scripts/welcomeScript.js"></script>
 </body>
 
 </html>
