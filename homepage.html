@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo">
+  <link rel="stylesheet" href="styles/sidebar-style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: "Nanum Myeongjo";
+    }
+
+    .left-section {
+      padding-left: 0.9em;
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+
+    .left-section img {
+      width: 13%;
+      padding-right: 0.5em;
+      padding-bottom: 0.6em;
+    }
+
+    .header {
+      text-align: right;
+    }
+
+    .split-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .split-left,
+    .split-right {
+      flex: 1;
+      overflow: auto;
+      padding: 20px;
+    }
+
+    .split-left {
+      background-color: #B1C8B3;
+    }
+
+    .split-right {
+      background-color: #F5F5F5;
+    }
+
+    input[type=email] {
+      width: 100%;
+      padding: 20px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      background-color: #D6E3D7;
+      border-color: rgb(0, 0, 0, 0.3);
+      border-radius: 20px;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 20px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      background-color: #D6E3D7;
+      border-color: rgb(0, 0, 0, 0.3);
+      border-radius: 20px;
+    }
+
+    .icons {
+      width: 35px;
+      height: 35px;
+      margin-right: 20px;
+    }
+ 
+    /* navbar stuff */
+    .icons { 
+                width: 25px;
+                height: 25px;
+                transition: filter 0.7s ease;
+                padding: 0.5em 0.5em;
+            }
+
+    .button {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 8px 0;
+            margin-top: 120px; /*  margin to add padding to top, so like its in the middle */
+            border-color: rgb(0, 0, 0, 0.3);
+            border-radius: 20px;
+            height: 60px; 
+        }
+    .links {
+            display: flex;
+            list-style: none;
+        }
+        
+    .links li {
+            margin-left: 4em;
+        }
+
+    .right-section {
+            padding-right: 0.8em;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 2em;
+        }
+
+    .icon-button {
+            border: none;
+            background-color: transparent;
+        }
+
+    .icon-button:hover{
+            background-color: rgb(177,200,179);
+            border-radius: 0.7em;
+        }
+
+    /* button sign out */
+        .search-form {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            width: 80%;
+        }
+
+        .sign-in-btn {
+            margin-left: auto;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #28a745;
+            color: #28a745;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sign-in-btn:hover {
+            background-color:  rgb(177,200,179);
+            color: #fff;
+        }
+  </style>
+  <link rel="icon" type="image/png" href="images/Logo.png">
+</head>
+
+<body>
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
+    <div class="sidebar-div">
+      <img src="images/about-us-icon.png" alt="">
+      <a href="main.html">About Us</a>
+    </div>
+
+    <div class="sidebar-div">
+      <img src="images/rating-system-icon.png" alt="">
+      <a href="#details">Rating System</a>
+    </div>
+
+    <div class="sidebar-div">
+      <img src="images/heart-icon.png" alt="">
+      <a href="#">Favourites</a>
+    </div>
+
+    <div class="sidebar-div">
+      <img src="images/faq-icon.png" alt="">
+      <a href="#">FAQ</a>
+    </div>
+
+    <div class="sidebar-div">
+      <img src="images/contact-icon.png" alt="">
+      <a href="#">Contact Us</a>
+    </div>
+
+
+    <hr>
+    <div class="sidebar-div">
+      <img src="images/profile-icon.png" alt="">
+      <a href="#">Account</a>
+    </div>
+
+  </div>
+
+  <div class="split-container">
+    <!-- Content for the left side -->
+    <div class="split-left">
+      <div class="header">
+        <div class="left-section">
+          <img src="images/Logo.png" alt="logo">
+          <p>T&L C</p>
+        </div>
+      </div>
+      <div style="font-size: 80px;">
+        <div>The</div>
+        <div>Easy</div>
+        <div>Way</div>
+        <div>To</div>
+        <div>Shop</div>
+        <div>Right</div>
+      </div>
+    </div>
+
+    <!-- Content for the right side -->
+    <div class="split-right">
+      <div class="header">
+        <nav>
+            <div class="right-section">
+                <ul class="links">
+                    <li><button class="icon-button"><a href="main.html"><img class="icons" src="images/home-icon.png" alt="home-icon"></a></button></li>
+                    <li><button class="icon-button"><a href="#" id="hamburger-icon"><img class="icons" src="images/hamburger.webp" alt="hamburger-icon"></a></button></li>
+                    <li><button class="icon-button"><a href="accountDetails.html"><img class="icons" src="images/profile-icon.png" alt="profile-icon"></a></button></li>
+                </ul>
+           </div>
+        </nav>
+      </div>
+      <h2 id="msg"></h2>
+      <h2 id="greet"></h2>
+
+      <form class="search-form" role="search">
+        <button class="sign-in-btn" type="button" id="signoutbutton">Sign Out</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+    let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+    let MsgHead = document.getElementById('msg');
+    let GreetHead = document.getElementById('greet');
+    let SignoutBtn = document.getElementById('signoutbutton');
+
+    let Signout = () => {
+      sessionStorage.removeItem("user-creds");
+      sessionStorage.removeItem("user-info");
+      window.location.href = 'signIn.html'
+    }
+
+    let CheckCred = () => {
+      if (!sessionStorage.getItem("user-creds"))
+        window.location.href = 'signIn.html'
+      else {
+        //MsgHead.innerText = `user with email "${UserCreds.email}" logged in`;
+        GreetHead.innerText = `Welcome ${UserInfo.firstname + " " + UserInfo.lastname}!`;
+      }
+
+    }
+
+    window.addEventListener('load', CheckCred);
+    SignoutBtn.addEventListener('click', Signout);
+  </script>
+   <script src="scripts/frontendScript.js"></script>
+</body>
+
+</html>
