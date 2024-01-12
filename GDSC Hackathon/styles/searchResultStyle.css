@@ -123,8 +123,8 @@ a:link {
 .name-rate p {
     white-space: nowrap;
 }
-.rate {
-    font-size: 1.5rem;
+.rate, .price {
+    font-size: 1rem;
 }
 
 .vertical-line {
