@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap">
+
+    <!-- navbar code -->
+    <link rel="stylesheet" href="styles/navbarStyle.css">
+    <link rel="stylesheet" href="styles/sidebar-style.css">
+    <link rel="stylesheet" href="styles/footer.css">
+
+    <style>
+        body {
+                margin: 0; /* this is supposed to fix the margin issues */
+                padding: 20px;
+                background-color: #F5F5F5;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* font-family: 'Nanum Myeongjo'; */
+            }
+        .title-box {
+                margin: auto;
+                background-color: rgb(214,227,215,0.7);
+                border-color: rgb(0, 0, 0, 0.3);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                text-align: left;
+
+                width: 799px;
+                height: 127px;
+                flex-shrink: 0;
+                border-radius: 4px;
+            }   
+        .button {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 8px 0;
+            margin-top: 80px; /*  margin to add padding to top, so like its in the middle */
+            border-color: rgb(0, 0, 0, 0.3);
+            border-radius: 20px;
+            height: 60px; 
+        }
+
+        /* button sign out */
+        .search-form {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+
+        .sign-out-btn {
+            margin-left: auto;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #28a745;
+            color: #28a745;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sign-out-btn:hover {
+            background-color: #28a731;
+            color: #fff;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="images/Logo.png">
+</head>
+<body>
+    <!-- side bar code starts here -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
+        <div class="sidebar-div">
+            <img src="images/about-us-icon.png" alt="">
+            <a href="main.html">About Us</a>
+        </div>
+
+        <div class="sidebar-div">
+            <img src="images/rating-system-icon.png" alt="">
+            <a href="ratingSystem.html">Rating System</a>
+        </div>
+
+        <div class="sidebar-div">
+            <img src="images/heart-icon.png" alt="">
+            <a href="favouritesPage.html">Favourites</a>
+        </div>
+        
+        <div class="sidebar-div">
+            <img src="images/faq-icon.png" alt="">
+            <a href="faq.html">FAQ</a>
+        </div>
+        
+       <div class="sidebar-div">
+            <img src="images/contact-icon.png" alt="">
+            <a href="#">Contact Us</a>
+       </div>       
+        <hr>
+        <div class="sidebar-div">
+            <img src="images/profile-icon.png" alt="">
+            <a href="accountDetails.html">Account</a>
+        </div>    
+    </div>
+    <!-- main code -->
+    <div id="main">
+        <nav>
+            <div class="left-section">
+                <img src="images/Logo.png" alt="logo">
+                <p>T&L C</p>
+            </div>
+            <div class="middle-section">
+                <p>Think & Look Clean</p>
+                <div class="search-container">
+                    <img src="images/search-icon.webp" alt="search">
+                    <input class="search-input" type="text" placeholder="search products or brands">
+                </div>
+            </div>
+    
+            <div class="right-section">
+                <ul class="links">
+                    <li><button class="icon-button"><a href="main.html"><img class="icons" src="images/home-icon.png" alt="home-icon"></a></button></li>
+
+                    <li><button class="icon-button"><a href="#" id="hamburger-icon"><img class="icons" src="images/hamburger.webp" alt="hamburger-icon"></a></button>
+                        </li>
+                    <li><button class="icon-button"><a href="favouritesPage.html"><img class="icons" src="images/heart-icon.png" alt="heart-icon"></a></button>
+                        </li>
+                    <li><button class="icon-button"><a href="accountDetails.html"><img class="icons" src="images/profile-icon.png" alt="profile-icon"></a></button>
+                        </li>
+                </ul>
+           </div>        
+        </nav>
+
+            <div style="font-family: 'Nanum Myeongjo';">
+                <h1> Account Details </h1>
+
+            <div class="title-box">
+                <h2>Personal Information</h2>
+                <p id="name"> Fullname: </p>
+                <p id="email">Email:  </p>
+                <!-- <p>Language: English  </p> -->
+              
+            </div>
+            <br>
+            <br>           
+            <div class="title-box">
+                <h2>Clothing Sizes</h2>
+                <p>Top: Medium</p>
+                <p>Bottom: 10</p>
+            </div>
+            <br>
+            <br>
+            <div class="title-box">
+                <h2>Phone Number</h2>
+                <br>
+                <p>647-123-1111</p>
+            </div>
+            <!-- <br>
+            <br>
+            <div class="title-box">
+                <h2>Email Address</h2>
+                <p id="email">Email:  </p>
+            </div> -->
+            <!-- <br>
+            <br>
+            <div class="title-box">
+                <h2>Password</h2>
+                <p id="passcode">Passcode: </p>
+            </div> -->
+            <br>
+            <form class="search-form" role="search">
+                <button class="sign-out-btn" type="button" id="signoutbutton">Sign Out</button>
+              </form>
+            </div>
+    </div>
+    <footer>
+        <div class="split-container">
+            <div class="split-left">
+                <h3> Visit Us! </h3>
+                <!-- can put the icons of the applications instead of the names -->
+                <p>instagram: @T&LC</p>
+                <p>facebook: T&LC</p>
+                <p>twitter: @T&LC</p>
+                <p>pinterest: T&LC.com </p>
+                <p>tiktok: T&LC </p>
+                <p>email: T&LC@gmail.com</p>
+            </div>
+            <div class="split-right">
+                <p>Submit your email and question and we will get back to you as soon as possible!</p>
+                <br>
+                <textarea id="textArea" rows="1" cols="75"></textarea>
+                <br>
+                <textarea id="textArea" rows="7" cols="75"></textarea>
+                <br>
+                <button>Submit Message</button>
+            </div>
+        </div>     
+    </footer>
+
+    <script src="scripts/frontendScript.js"></script>
+    <script>
+        let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+    
+        let MsgHead = document.getElementById('msg');
+        let GreetHead = document.getElementById('greet');
+        let SignoutBtn = document.getElementById('signoutbutton');
+    
+        let Signout = () => {
+          sessionStorage.removeItem("user-creds");
+          sessionStorage.removeItem("user-info");
+          window.location.href = 'signIn.html'
+        }
+    
+        let CheckCred = () => {
+          if (!sessionStorage.getItem("user-creds"))
+            window.location.href = 'signIn.html'
+          else {
+            let name = document.getElementById('name');
+            let email = document.getElementById('email');
+            let passcode = document.getElementById('passcode');
+
+            //MsgHead.innerText = `user with email "${UserCreds.email}" logged in`;
+            name.innerHTML = '<p> Fullname: ' + `${UserInfo.firstname + " " + UserInfo.lastname}` + '</p>';
+            email.innerHTML = '<p> Email: ' + `${UserCreds.email}` + '</p>';
+            passcode.innerHTML = '<p> Password: ' + `${UserCreds.PassInp}` + '</p>';
+          }
+    
+        }
+    
+        window.addEventListener('load', CheckCred);
+        SignoutBtn.addEventListener('click', Signout);
+      </script>
+</body>
+</html> 
