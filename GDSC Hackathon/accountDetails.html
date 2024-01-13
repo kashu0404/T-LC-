@@ -12,62 +12,9 @@
     <link rel="stylesheet" href="styles/navbarStyle.css">
     <link rel="stylesheet" href="styles/sidebar-style.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/account.css">
 
-    <style>
-        body {
-                margin: 0; /* this is supposed to fix the margin issues */
-                padding: 20px;
-                background-color: #F5F5F5;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                /* font-family: 'Nanum Myeongjo'; */
-            }
-        .title-box {
-                margin: auto;
-                background-color: rgb(214,227,215,0.7);
-                border-color: rgb(0, 0, 0, 0.3);
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                text-align: left;
-
-                width: 799px;
-                height: 127px;
-                flex-shrink: 0;
-                border-radius: 4px;
-            }   
-        .button {
-            width: 100%;
-            box-sizing: border-box;
-            margin: 8px 0;
-            margin-top: 80px; /*  margin to add padding to top, so like its in the middle */
-            border-color: rgb(0, 0, 0, 0.3);
-            border-radius: 20px;
-            height: 60px; 
-        }
-
-        /* button sign out */
-        .search-form {
-            display: flex;
-            justify-content: flex-end;
-            padding: 10px;
-        }
-
-        .sign-out-btn {
-            margin-left: auto;
-            text-decoration: none;
-            padding: 10px 20px;
-            border: 1px solid #28a745;
-            color: #28a745;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .sign-out-btn:hover {
-            background-color: #28a731;
-            color: #fff;
-        }
-    </style>
+    
     <link rel="icon" type="image/png" href="images/Logo.png">
 </head>
 <body>
@@ -108,31 +55,36 @@
     <div id="main">
         <nav>
             <div class="left-section">
-                <img src="images/Logo.png" alt="logo">
-                <p>T&L C</p>
+                <a href="main.html">
+                    <img src="images/Logo.png" alt="logo">
+                    T&L C
+                </a>
             </div>
+    
             <div class="middle-section">
                 <p>Think & Look Clean</p>
                 <div class="search-container">
                     <img src="images/search-icon.webp" alt="search">
                     <input class="search-input" type="text" placeholder="search products or brands">
                 </div>
+           
             </div>
     
             <div class="right-section">
                 <ul class="links">
-                    <li><button class="icon-button"><a href="main.html"><img class="icons" src="images/home-icon.png" alt="home-icon"></a></button></li>
+                    <li><button class="icon-button"><a href="main.html"><img class="icons home-icon" src="images/home-icon.png" alt="home-icon"></a></button></li>
 
-                    <li><button class="icon-button"><a href="#" id="hamburger-icon"><img class="icons" src="images/hamburger.webp" alt="hamburger-icon"></a></button>
+                    <li><button class="icon-button"><a href="#" id="hamburger-icon"><img class="icons hamburger-icon" src="images/hamburger.webp" alt="hamburger-icon"></a></button>
                         </li>
-                    <li><button class="icon-button"><a href="favouritesPage.html"><img class="icons" src="images/heart-icon.png" alt="heart-icon"></a></button>
+                    <li><button class="icon-button"><a href="favouritesPage.html"><img class="icons heart-icon " src="images/heart-icon.png" alt="heart-icon"></a></button>
                         </li>
-                    <li><button class="icon-button"><a href="accountDetails.html"><img class="icons" src="images/profile-icon.png" alt="profile-icon"></a></button>
+                    <li><button class="icon-button"><a href="accountDetails.html"><img class="icons profile-icon" src="images/profile-icon.png" alt="profile-icon"></a></button>
                         </li>
                 </ul>
-           </div>        
+    
+           </div>
+            
         </nav>
-
             <div style="font-family: 'Nanum Myeongjo';">
                 <h1> Account Details </h1>
 
@@ -203,21 +155,21 @@
     <script>
         let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
         let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
-    
+
         let MsgHead = document.getElementById('msg');
         let GreetHead = document.getElementById('greet');
         let SignoutBtn = document.getElementById('signoutbutton');
-    
+
         let Signout = () => {
-          sessionStorage.removeItem("user-creds");
-          sessionStorage.removeItem("user-info");
-          window.location.href = 'signIn.html'
+        sessionStorage.removeItem("user-creds");
+        sessionStorage.removeItem("user-info");
+        window.location.href = 'signIn.html'
         }
-    
+
         let CheckCred = () => {
-          if (!sessionStorage.getItem("user-creds"))
+        if (!sessionStorage.getItem("user-creds"))
             window.location.href = 'signIn.html'
-          else {
+        else {
             let name = document.getElementById('name');
             let email = document.getElementById('email');
             let passcode = document.getElementById('passcode');
@@ -226,10 +178,10 @@
             name.innerHTML = '<p> Fullname: ' + `${UserInfo.firstname + " " + UserInfo.lastname}` + '</p>';
             email.innerHTML = '<p> Email: ' + `${UserCreds.email}` + '</p>';
             passcode.innerHTML = '<p> Password: ' + `${UserCreds.PassInp}` + '</p>';
-          }
-    
         }
-    
+
+        }
+
         window.addEventListener('load', CheckCred);
         SignoutBtn.addEventListener('click', Signout);
       </script>

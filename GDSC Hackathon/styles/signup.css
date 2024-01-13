@@ -5,11 +5,6 @@ body {
     font-family: "Nanum Myeongjo";
   }
 
-  #main {
-  transition: margin-left .5s;
-  padding: 65px 0.1em;
-  }
-
   .left-section {
     padding-left: 0.9em;
     display: flex;
@@ -78,11 +73,11 @@ body {
   }
 
   .icons { 
-              width: 40px;
-              height: 40px;
+              width: 25px;
+              height: 25px;
               transition: filter 0.7s ease;
               padding: 0.5em 0.5em;
-  }
+          }
   .button {
       width: 100%;
       box-sizing: border-box;
@@ -96,10 +91,10 @@ body {
       display: flex;
       list-style: none;
   }
-  
-  .links li {
-      margin-left: 4em;
-  }
+      
+      .links li {
+          margin-left: 4em;
+      }
 
       .right-section {
           padding-right: 0.9em;
@@ -121,23 +116,23 @@ body {
 
       /* button sign out */
       .search-form {
-      display: flex;
-      justify-content: flex-end;
-      padding: 10px;
-      /* width: 80%; */
+          display: flex;
+          justify-content: flex-end;
+          padding: 10px;
+          width: 80%;
+      }
+      .common-btn {
+          margin-left: auto;
+          font-family: "Nanum Myeongjo";
+          text-decoration: none;
+          padding: 12.5px 20px;
+          border: 1px solid #28a745;
+          color: #28a745;
+          border-radius: 5px;
+          cursor: pointer;
       }
 
-      .sign-out-btn {
-      margin-left: auto;
-      text-decoration: none;
-      padding: 10px 20px;
-      border: 1px solid #28a745;
-      color: #28a745;
-      border-radius: 5px;
-      cursor: pointer;
-      }
-
-      .sign-out-btn:hover {
-      background-color: #28a745;
-      color: #fff;
+      .common-btn:hover {
+          background-color:  rgb(177,200,179);
+          color: #fff;
       }

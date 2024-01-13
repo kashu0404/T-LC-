@@ -1,0 +1,53 @@
+body {
+    margin: 0; /* this is supposed to fix the margin issues */
+    padding: 20px;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* font-family: 'Nanum Myeongjo'; */
+}
+.title-box {
+    margin: auto;
+    background-color: rgb(214,227,215,0.7);
+    border-color: rgb(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+
+    width: 799px;
+    height: 127px;
+    flex-shrink: 0;
+    border-radius: 4px;
+}   
+.button {
+width: 100%;
+box-sizing: border-box;
+margin: 8px 0;
+margin-top: 80px; /*  margin to add padding to top, so like its in the middle */
+border-color: rgb(0, 0, 0, 0.3);
+border-radius: 20px;
+height: 60px; 
+}
+
+/* button sign out */
+.search-form {
+display: flex;
+justify-content: flex-end;
+padding: 10px;
+}
+
+.sign-out-btn {
+margin-left: auto;
+text-decoration: none;
+padding: 10px 20px;
+border: 1px solid #28a745;
+color: #28a745;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.sign-out-btn:hover {
+background-color: #28a731;
+color: #fff;
+}
