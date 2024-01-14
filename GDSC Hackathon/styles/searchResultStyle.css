@@ -7,7 +7,7 @@ body {
     display: flex;
     align-items: flex-start;
     padding: 0 1em;
-    gap: 3em;
+    gap: 1em;
 }
 
 h2 {
@@ -39,6 +39,7 @@ h4 {
     display: flex;
     gap:2em;
     align-items:center ;
+
 }
 
 .title{
@@ -142,14 +143,15 @@ a:link {
     flex-wrap:wrap ;
     margin-top: 1em;
     margin-bottom: 3em;
-    padding: 3em;
+    padding: 3em 0;
+    columns: 1fr 1fr 1fr;
 }
 
 
 .card {
-    width: 15em;
+    width: 12em;
     background-color: none;
-    border: 1px solid rgb(215, 212, 212);
+    /* border: 1px solid rgb(215, 212, 212); */
     overflow: hidden;
     text-align: center;
     padding: 2em 1em;
@@ -157,7 +159,7 @@ a:link {
 }
 
 .card img  {
-    width: 50%;
+    width: 100%;
     height: auto;
 }
 
@@ -167,7 +169,9 @@ a:link {
     font-size: 0.9rem;
 }
 
-
+.info .rate {
+    width: 30px;
+}
 .info {
     display: flex;
     justify-content: center;
