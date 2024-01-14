@@ -70,9 +70,11 @@ hr {
     font-weight: 700;
 }
 
-.percent-rate {
-    font-weight: 700;
-    font-size: 2em;
+.percent-rate img {
+    /* font-weight: 700;
+    font-size: 2em; */
+    width: 10%;
+    cursor: pointer;
 }
 
 .fabric {
