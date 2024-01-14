@@ -52,15 +52,31 @@ background-color: #28a731;
 color: #fff;
 }
 
+.account{
+    margin-top: 18%;
+}
+
         /*  responsive code */
         @media (min-width:555px) and (max-width:830px) {
             .title-box {
                 width: 100%;
             }
+            .account{
+                margin-top: 40%;
+            }
+            .sign-out-btn {
+                width: 60%;
+                }
         }
 
-        @media (max-width:455px) {
+        @media (max-width:554px) {
             .title-box {
                 width: 100%;
             }
+            .account{
+                margin-top: 50%;
+            }
+            .sign-out-btn {
+                width: 40%;
+                }
         }

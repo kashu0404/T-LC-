@@ -106,7 +106,7 @@ nav {
 
 .icon-button:hover{
     background-color: rgb(177,200,179);
-   border-radius: 1em;
+    border-radius: 1em;
 }
 
 .home-icon, .heart-icon, .profile-icon {
@@ -121,7 +121,6 @@ nav {
 }
 
 @media (min-width:555px) and (max-width:830px) {
-
 
     .icons {
         width: 23px;
@@ -155,6 +154,12 @@ nav {
       
     .links li {
         margin-left: 0;
+    }
+
+    .icon-button:hover{
+        margin-left: 1.9em;
+        background-color: rgb(177,200,179);
+        border-radius: 1em;
     }
     
 }
@@ -199,6 +204,11 @@ nav {
         flex-wrap: nowrap;
     }
 
+    .icon-button:hover{
+        margin-left: 1.9em;
+        background-color: rgb(177,200,179);
+        border-radius: 1em;
+    }
 }
 
 @media (max-width:455px) {
@@ -252,4 +262,9 @@ nav {
         justify-content: space-between;
     }
 
+    .icon-button:hover{
+        margin-left: 1.9em;
+        background-color: rgb(177,200,179);
+        border-radius: 1em;
+    }
 }
