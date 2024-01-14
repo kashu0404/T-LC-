@@ -52,7 +52,15 @@ background-color: #28a731;
 color: #fff;
 }
 
-@media only screen and (max-width: 800px) {
-    .title-box {
-        width:100%;}
-}
+        /*  responsive code */
+        @media (min-width:555px) and (max-width:830px) {
+            .title-box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width:455px) {
+            .title-box {
+                width: 100%;
+            }
+        }
