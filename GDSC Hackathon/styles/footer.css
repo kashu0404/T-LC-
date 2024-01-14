@@ -78,7 +78,8 @@ form input {
     .split-container {
         flex-direction: row;
     }
-    button{
-        width: 60%;
+    .submit{
+        text-align: center;
+        width: 75%;
     }
 }
