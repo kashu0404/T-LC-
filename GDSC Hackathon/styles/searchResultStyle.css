@@ -109,22 +109,37 @@ a:link {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    max-width: 100%;
 }
+
 .item img {
-   width: 90%;
+   width: 200px;
 }
 
 .name-rate {
     display: flex;
-    gap: 1em;
-    align-items: center;
+    flex-direction: column;
 }
 
-.name-rate p {
-    white-space: nowrap;
+.name {
+    margin-bottom: 0;
+    display: inline-block;
+    max-width: 70%; /* Adjust as needed */
+    overflow-wrap: break-word;
 }
+
+
+.info {
+    display: flex;
+    gap: 1em;
+}
+
 .rate, .price {
     font-size: 1rem;
+}
+
+.price {
+    color:red;
 }
 
 .vertical-line {
