@@ -36,15 +36,19 @@ body {
     margin-top: 10px;
 }
 
-@media only screen and (max-width: 800px) {
-    .faq-container {
-        width: 60%;
-        max-width: none;
-    }
-}
+        /* responsive code */
+        @media (min-width:555px) and (max-width:830px) {
+            .faq-container {
+                width: 50%;
+                margin: 20px auto;
+                padding: auto;
+            }
+        }
 
-@media only screen and (max-width: 600px) {
-    .faq-container {
-        width: 50%;
-    }
-}
+        @media (max-width:455px) {
+            .faq-container {
+                width: 30%;
+                margin: 20px auto;
+                padding: auto;
+            }
+        }

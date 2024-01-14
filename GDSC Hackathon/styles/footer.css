@@ -25,3 +25,14 @@ footer {
 .split-left{
 text-align: left;
 }
+textarea {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .split-container {
+        flex-direction: row;
+    }
+}
