@@ -51,3 +51,8 @@ cursor: pointer;
 background-color: #28a731;
 color: #fff;
 }
+
+@media only screen and (max-width: 800px) {
+    .title-box {
+        width:100%;}
+}

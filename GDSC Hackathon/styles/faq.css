@@ -35,3 +35,16 @@ body {
     display: none;
     margin-top: 10px;
 }
+
+@media only screen and (max-width: 800px) {
+    .faq-container {
+        width: 60%;
+        max-width: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .faq-container {
+        width: 50%;
+    }
+}
