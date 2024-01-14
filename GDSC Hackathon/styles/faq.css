@@ -12,13 +12,12 @@ body {
     flex-direction: column;
 }
 .faq-container {
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 1000px;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
     margin: 20px auto; /* Center the FAQ container */
 
     font-family: 'Nanum Myeongjo';
@@ -36,19 +35,19 @@ body {
     margin-top: 10px;
 }
 
-        /* responsive code */
-        @media (min-width:555px) and (max-width:830px) {
-            .faq-container {
-                width: 50%;
-                margin: 20px auto;
-                padding: auto;
-            }
+    /* responsive code */
+    @media (min-width:555px) and (max-width:830px) {
+        .faq-container {
+            width: 70%;
+            margin: 20px auto;
+            padding: auto;
         }
+    }
 
-        @media (max-width:455px) {
-            .faq-container {
-                width: 30%;
-                margin: 20px auto;
-                padding: auto;
-            }
+    @media (max-width:455px) {
+        .faq-container {
+            width: 30%;
+            margin: 20px auto;
+            padding: auto;
         }
+    }

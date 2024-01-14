@@ -1,6 +1,5 @@
 footer {
     margin: 0; 
-    bottom: 0;
     width: 100%;
     background-color: #B1C8B3; 
     color: black; 
@@ -22,17 +21,17 @@ footer {
         padding: 20px;
         /* border: 1px solid white;  */
     }
-.split-left{
-text-align: left;
-}
-textarea {
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-@media (min-width: 768px) {
-    .split-container {
-        flex-direction: row;
+    .split-left{
+    text-align: left;
     }
-}
+    textarea {
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .split-container {
+            flex-direction: row;
+        }
+    }
