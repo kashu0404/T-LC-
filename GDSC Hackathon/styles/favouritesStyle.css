@@ -92,3 +92,9 @@ hr {
 .save-button img {
     filter: invert(35%) sepia(100%) saturate(3462%) hue-rotate(346deg) brightness(80%) contrast(97%);
 }
+
+@media (max-width:642px) {
+    #main h1 {
+        margin-top: 30%;
+    }
+}
