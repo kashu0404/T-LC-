@@ -328,5 +328,45 @@
         </div>     
     </footer>
     <script src="scripts/frontendScript.js"></script>
+     <script> 
+
+        async function CreateList() {
+            const response= await fetch('product_details.csv');
+            const data= await response.text();
+
+            const format= data.split('\n');
+            const lineArr = format.slice(1)
+            const headings= format[0]
+            
+
+            lineArr.forEach(line => {
+                let ce= document.createElement('div');
+                
+
+                const elem= line.split('\t')
+                let struct = `<a href="productDetails.html">
+                                <div class="card">
+                                    <img class= product-image src=${elem[5]} alt=${elem[0]}: ${elem[1]}>
+                                    <div class="card-content">
+                                        <h3 class="name">${elem[0]}: ${elem[1]}</h3>
+                                        <div class="info">                                  
+                                            <p class="price">${elem[2]}</p>
+                                            <img class="rate" src="https://i.gyazo.com/883ea2ae2ee4c797a8711987f353027e.png" alt=${elem[0]}: ${elem[1]}>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>`
+
+                ce.innerHTML = struct
+                if (ce.innerText !== "") {
+                    document.querySelector('div.card-container').appendChild(ce);
+                }
+
+            })
+        }
+
+        CreateList();
+        
+    </script>
   
 </body>
