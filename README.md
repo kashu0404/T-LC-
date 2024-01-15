@@ -12,7 +12,7 @@
 +------------------+-------------------------------+---------+
 | idmaterialsTable | material                      | quality |
 +------------------+-------------------------------+---------+
-|                1 | cupro                         | low     |
+|                1 | cupro                         | low		 |
 |                2 | cupra                         | low     |
 |                3 | rayon                         | low     |
 |                4 | polyester                     | low     |
