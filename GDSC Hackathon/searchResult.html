@@ -267,18 +267,177 @@
             </div>
             <div class="split-right">
                 <p>Submit your email and question and we will get back to you as soon as possible!</p>
-                <div class="form-container">
-                    <form action="">
-                        <input type="text" placeholder="Full Name">
-                        <input type="email" placeholder="Email">
-                       <textarea name="message" id="user_msg" rows="8" cols="90" placeholder="Type message..."></textarea>
-                       <button class="submit">Submit</button>
-                    </form>
-                </div>
+                <br>
+                <textarea id="textArea" rows="1" cols="75"></textarea>
+                <br>
+                <textarea id="textArea" rows="7" cols="75"></textarea>
+                <br>
+                <button>Submit Message</button>
             </div>
         </div>     
     </footer>
     <script src="scripts/frontendScript.js"></script>
+    <script>
+            import mysqlPromise from "mysql2/promise.js";
+            import dotenv from 'dotenv';
+            import { promises as fs } from 'fs';
+
+            dotenv.config();
+
+            const pool = mysqlPromise.createPool({
+                host: process.env.MYSQL_HOST,
+                user: process.env.MYSQL_USER,
+                password: process.env.MYSQL_PASSWORD,
+                database: process.env.MYSQL_DATABASE
+            });
+
+            async function getMaterialQuality(material) {
+                try {
+                    const [rows] = await pool.query(`
+                        SELECT quality
+                        FROM TlcProject.materialsTable
+                        WHERE material = ? `, [material]);
+
+                    if (rows.length === 0) {
+                        console.warn(`Material "${material}" not found in the database.`);
+                        return 0.0;
+                    }
+
+                    const resultQuality = rows[0].quality;
+
+                    console.log(`Quality of the material "${material}": ${resultQuality}`);
+
+                    switch (resultQuality) {
+                        case "high":
+                            return 0.9;
+                        case "good":
+                            return 0.7;
+                        case "low":
+                            return 0.4;
+                        default:
+                            return 0.0;
+                    }
+                } catch (error) {
+                    console.error('Error fetching quality:', error.message);
+                    throw error;
+                }
+            }
+
+            async function readCSVFile(filePath) {
+                try {
+                    const data = await fs.readFile(filePath, 'utf-8');
+                    const lines = data.split('\n').map(line => line.trim()).filter(line => line !== '');
+                    return lines;
+                } catch (error) {
+                    console.error('Error reading CSV file:', error.message);
+                    throw error;
+                }
+            }
+
+
+            async function getLeaf(num) { //ADDED
+                            if (num<= 40) {
+                                return "https://i.gyazo.com/a2c19f072e536253dbee8599756dede6.png"
+                            } else if (num >= 40 && num<=70){
+                                return "https://i.gyazo.com/883ea2ae2ee4c797a8711987f353027e.png"
+                            } else if(num>= 70 && num<=100) {
+                                return "https://i.gyazo.com/a7e776ed7da0ec6afc60537f9841158f.png"
+                            } else {
+                                return "https://i.gyazo.com/98364c07baa9cc2889e8fc1c7b6b83fc.png"
+                            }
+                        }
+
+            async function calculateScoresFromCSV() {
+                try {
+                    const csvFilePath = 'copy.csv'; // CSV file in the same directory
+                    const materialLines = await readCSVFile(csvFilePath);
+
+                    const scoresPerRow = [];
+                    //const leafsPerRow = []
+
+                    // Start the loop from index 1 to skip the header row
+                    for (let i = 1; i < materialLines.length; i++) {
+                        const line = materialLines[i];
+                        const brandName = line.split('\t')[0]; // Assuming brand name is in the first column
+                        const compositionString = line.split('\t')[3]; // Assuming material composition is in the fourth column
+
+                        if (compositionString) {
+                            let materialPercentageRegex;
+
+                            if (brandName === 'H&M') {
+                                // Regular expression for H&M format
+                                materialPercentageRegex = /(\w+)\s+([\d.]+%)/g;
+                            } else {
+                                // Regular expression for other brands (reverse format)
+                                materialPercentageRegex =  /([\d.]+%)\s+([^,']+)/g ;
+                            }
+
+                            let match;
+                            let totalPercentage = 0;
+                            let score = 0;
+
+                            while ((match = materialPercentageRegex.exec(compositionString)) !== null) {
+                                const material = brandName === 'H&M' ? match[1] : match[2];
+                                const percentage = parseFloat(brandName === 'H&M' ? match[2] : match[1]);
+
+                                const materialQuality = await getMaterialQuality(material);
+                                score += materialQuality * percentage;
+
+                                totalPercentage += percentage;
+                                if (totalPercentage >= 100) {
+                                    break; // Stop processing once totalPercentage reaches 100
+                                }
+                            }
+
+                            scoresPerRow.push({
+                                row: line,
+                                totalScore: score,
+                                leaf: await getLeaf(score)
+                            });
+                            
+                        }
+                    }
+
+                    // Add a header for the 7th column (Score) if it doesn't exist
+                    if (!materialLines[0] || !materialLines[0].includes('Score')) {
+                        materialLines[0] = (materialLines[0] || '') + '\tScore';
+                    }
+                    if (!materialLines[0] || !materialLines[0].includes('Leaf')) {
+                        materialLines[0] = (materialLines[0] || '') + '\tLeaf';
+                    }
+                
+                    scoresPerRow.forEach((result, index) => {
+                        const lineParts = materialLines[index + 1].split('\t');
+                        // Update the 7th column with the new score
+                        lineParts[6] = result.totalScore.toString();
+                        // Update the 8th column with the leaf URL
+                        lineParts[7] = result.leaf.toString();
+                        materialLines[index + 1] = lineParts.join('\t');
+                    });
+                    
+
+                    // Write the updated content back to the CSV file
+                    const updatedCSVContent = materialLines.join('\n');
+                    await fs.writeFile(csvFilePath, updatedCSVContent, 'utf-8');
+
+                    return scoresPerRow;
+
+                } catch (error) {
+                    console.error('Error calculating scores:', error.message);
+                    return [];
+                }
+            }
+
+            // Example usage
+            calculateScoresFromCSV().then(results => {
+                results.forEach(result => {
+                    console.log(`Row: ${result.row}\nTotal Score: ${result.totalScore}\n`);
+                });
+                console.log('Scores added to the CSV file.');
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
      <script> 
 
         async function CreateList() {
@@ -302,7 +461,7 @@
                                         <h3 class="name">${elem[0]}: ${elem[1]}</h3>
                                         <div class="info">                                  
                                             <p class="price">${elem[2]}</p>
-                                            <img class="rate" src="https://i.gyazo.com/883ea2ae2ee4c797a8711987f353027e.png" alt=${elem[0]}: ${elem[1]}>
+                                            <img class="rate" src=${elem[7]} alt=${elem[0]}: ${elem[1]} alt=${elem[0]}: ${elem[1]}>
                                         </div>
                                     </div>
                                 </div>
@@ -317,7 +476,5 @@
         }
 
         CreateList();
-        
     </script>
-  
 </body>
