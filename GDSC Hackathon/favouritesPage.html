@@ -64,10 +64,16 @@
     
             <div class="middle-section">
                 <p>Think & Look Clean</p>
-                <div class="search-container">
+<!--                 <div class="search-container">
                     <img src="images/search-icon.webp" alt="search">
                     <input class="search-input" type="text" placeholder="search products or brands">
-                </div>
+                </div> -->
+                <form action="/T-LC-/GDSC%20Hackathon/searchResult.html" method="GET">
+                    <div class="search-container">
+                        <img src="images/search-icon.webp" alt="search">
+                        <input class="search-input" type="text" name="search-input" placeholder="search products or brands" onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">
+                    </div>
+                </form>
            
             </div>
     
